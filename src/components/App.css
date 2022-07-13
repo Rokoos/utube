@@ -1,0 +1,22 @@
+body {
+  margin-top: 20px;
+}
+
+.general {
+  display: flex;
+}
+.video {
+  margin-right: 1rem;
+  width: 70%;
+}
+
+@media (max-width: 1024px) {
+  .general {
+    flex-direction: column;
+  }
+  .video {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+}
