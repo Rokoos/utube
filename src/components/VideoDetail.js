@@ -5,7 +5,7 @@ export default function VideoDetail({ video }) {
     return <div>Loading...</div>;
   }
 
-  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}?loop=1&autoplay=1&playlist=${video.id.videoId}`;
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}?loop=1&autoplay=1&rel=0`;
   return (
     <div>
       <div className="ui embed">
