@@ -5,7 +5,7 @@ export default function VideoDetail({ video }) {
     return <div>Loading...</div>;
   }
 
-  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}?loop=1&autoplay=1&playlist=${video.id.videoId}`;
   return (
     <div>
       <div className="ui embed">
@@ -14,14 +14,15 @@ export default function VideoDetail({ video }) {
           height="315"
           src={videoSrc}
           allowFullScreen
-          allow="autoplay"
           title="video-player"
         />
       </div>
-      <div className="ui segment">
-        <h4 className="ui header">{video.snippet.title}</h4>
-        <p>{video.snippet.description}</p>
+      <div className="ui segment" style={{ backgroundColor: "#52ab98" }}>
+        <h4 className="ui header" style={{ color: "#fff" }}>
+          {video.snippet.title}
+        </h4>
       </div>
+      <hr style={{ height: 2, backgroundColor: "#f2f2f2" }} />
     </div>
   );
 }

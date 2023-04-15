@@ -2,8 +2,27 @@
   display: flex !important;
   align-items: center !important;
   cursor: pointer;
+  background-color: #52ab98;
+  color: #fff !important;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+}
+.video-item:first-of-type {
+  padding-top: 7px !important;
+}
+
+.video-item:hover {
+  background-color: #c8d8e4;
+  color: #2b6777 !important;
 }
 
 .video-item.item img {
+  margin-left: 5px !important;
   max-width: 180px;
+}
+
+@media (min-width: 600px) {
+  .video-item.item img {
+    max-width: 300px;
+  }
 }

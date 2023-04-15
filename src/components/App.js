@@ -8,46 +8,41 @@ import utube from "../api/utube";
 export default class App extends Component {
   state = {
     videos: [],
-    selectedVideo: null
+    selectedVideo: null,
   };
 
   componentDidMount() {
     this.onTermSubmit("Programming / Coding / Hacking music vol.16");
   }
 
-  onTermSubmit = async term => {
+  onTermSubmit = async (term) => {
     const response = await utube.get("/search", {
       params: {
-        q: term
-      }
+        q: term,
+      },
     });
 
     this.setState({
       videos: response.data.items,
-      selectedVideo: response.data.items[0]
+      selectedVideo: response.data.items[0],
     });
   };
 
-  onVideoSelect = video => {
+  onVideoSelect = (video) => {
     this.setState({ selectedVideo: video });
-    console.log(video);
   };
   render() {
-    console.log('videos', this.state.videos)
     return (
       <div className="ui container">
+        <div className="rokus">
+          <span>RokusTube</span>
+        </div>
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        <div className="general">
+        <div className="general" style={{ marginBottom: 30 }}>
           <div className="video">
             <VideoDetail video={this.state.selectedVideo} />
           </div>
-          <div
-            style={{
-              height: "70vh",
-              overflowX: "hidden",
-              overflowY: "scroll"
-            }}
-          >
+          <div style={{ marginTop: 50 }}>
             <VideoList
               onVideoSelect={this.onVideoSelect}
               videos={this.state.videos}
