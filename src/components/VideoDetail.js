@@ -1,11 +1,12 @@
 import React from "react";
 
 export default function VideoDetail({ video }) {
+  console.log("video", video);
   if (!video) {
     return <div>Loading...</div>;
   }
 
-  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}?loop=1&autoplay=1&rel=0`;
+  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}?autoplay=1&loop=1/`;
   return (
     <div>
       <div className="ui embed">
