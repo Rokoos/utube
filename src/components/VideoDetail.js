@@ -7,7 +7,7 @@ export default function VideoDetail({ video }) {
 
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}?}&loop=1&autoplay=1&rel=0/`;
   return (
-    <div>
+    <div style={{ borderBottom: "2px solid #db2828", paddingBottom: 10 }}>
       <div className="ui embed">
         <iframe
           width="560"
@@ -17,12 +17,16 @@ export default function VideoDetail({ video }) {
           title="video-player"
         />
       </div>
-      <div className="ui segment" style={{ backgroundColor: "#52ab98" }}>
+      <div
+        className="ui segment"
+        style={{
+          backgroundColor: "#444",
+        }}
+      >
         <h4 className="ui header" style={{ color: "#fff" }}>
           {video.snippet.title}
         </h4>
       </div>
-      <hr style={{ height: 2, backgroundColor: "#f2f2f2" }} />
     </div>
   );
 }

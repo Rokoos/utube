@@ -1,6 +1,11 @@
 body {
-  background-color: #2b6777;
+  /* background-color: #2b6777; */
+  background-color: #333;
   margin-top: 20px;
+}
+
+.blackish {
+  background-color: #333;
 }
 
 #video {

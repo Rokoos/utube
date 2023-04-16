@@ -19,9 +19,9 @@ export default class SearchBar extends Component {
     return (
       <div
         style={{
-          backgroundColor: "#52ab98",
+          backgroundColor: "#444",
         }}
-        className="search-bar ui segment form"
+        className=" ui segment form "
       >
         <form
           onSubmit={this.onFormSubmit}
